@@ -18,6 +18,33 @@ int inputCheck(long n) {
         return -2;
     }
 }
+void problemSeven (){
+    for (float i = 3.4; i < 4.4; i += 0.2) {
+        cout << "i = " << i << endl;
+    }
+}
+
+void problemEight (){
+    for (double i = 3.4; i < 4.4; i += 0.2) {
+        cout << "i = " << i << endl;
+    }
+}
+
+void problemSix (){
+    float sum = 0;
+    float n = 0;
+    do{
+        cout << "Input n: ";
+        cin >> n;
+    }
+    while(inputCheck(n) == -3);
+    for (float i = 1; i <= n; i++) {
+        sum = sum + (1 / i);
+        cout << sum << endl;
+    }
+    cout << sum << endl;
+}
+
 
 void problemFive (){
     double product = 1;
@@ -160,15 +187,15 @@ int main() {
         if (testSelection == 5) {
             problemFive();
         }
-//        if (testSelection == 6) {
-//            problemSix();
-//        }
-//        if (testSelection == 7) {
-//            problemSeven();
-//        }
-//        if (testSelection == 8) {
-//            problemEight();
-//        }
+        if (testSelection == 6) {
+            problemSix();
+        }
+        if (testSelection == 7) {
+            problemSeven();
+        }
+        if (testSelection == 8) {
+            problemEight();
+        }
     }
     cout << "End of code";
     return 0;
