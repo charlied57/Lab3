@@ -1,12 +1,14 @@
 #include <iostream>
+#include <cmath>
+#include <cfloat>
 
 using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
 
-int inputCheck() {
-    if (cin.fail()) {
+int inputCheck(long n) {
+    if (cin.fail() || n < 0) {
         cout << "Please input a valid input" << endl;
         cin.clear();
         cin.ignore();
@@ -17,11 +19,61 @@ int inputCheck() {
     }
 }
 
-void problemFour (){
+void problemFive (){
+    double product = 1;
+    long n = 0;
+    do{
+        cout << "Input n: ";
+        cin >> n;
+    }
+    while(inputCheck(n) == -3);
 
+    for(long i = 1; i <= n; i++){
+        product = product * i;
+    }
+    cout << n << "! is " << product << endl;
+
+    product = 1;
+    long temp = 0;
+    double prevProd;
+    long prevTemp;
+    while (product != INFINITY) {
+        prevProd = product;
+        prevTemp = temp;
+        temp = temp + 1;
+        product = product * temp;
+    }
+    cout << "There is an overflow when n is greater than " << prevTemp << " ." << endl;
+    cout << "The largest product of 1 to n you can have in a long is " << prevProd << " ." << endl;
 }
 
+void problemFour (){
+    float product = 1;
+    long n = 0;
+    do{
+        cout << "Input n: ";
+        cin >> n;
+    }
+    while(inputCheck(n) == -3);
 
+    for(long i = 1; i <= n; i++){
+        product = product * i;
+    }
+    cout << n << "! is " << product << endl;
+
+    product = 1;
+    long temp = 0;
+    float prevProd;
+    long prevTemp;
+    while (product != INFINITY) {
+        prevProd = product;
+        prevTemp = temp;
+        temp = temp + 1;
+        product = product * temp;
+    }
+    cout << "There is an overflow when n is greater than " << prevTemp << " ." << endl;
+    cout << "The largest product of 1 to n you can have in a long is " << prevProd << " ." << endl;
+}
 
 void problemThree (){
     long sum = 0;
@@ -30,8 +82,8 @@ void problemThree (){
         cout << "Input n: ";
         cin >> n;
     }
-    while(inputCheck() == -3);
-    for (int i = 1; i <= n; i++) {
+    while(inputCheck(n) == -3);
+    for (long i = 1; i <= n; i++) {
         sum = sum + i;
     }
     cout << "\nThe sum of 1 to " << n << " is " << sum << endl;
@@ -52,7 +104,7 @@ void problemThree (){
 
 void problemTwo(){
     short sum = 0;
-    int temp = 1;
+    short temp = 1;
     short prevSum;
     short prevTemp;
     while (sum >= 0) {
@@ -68,28 +120,31 @@ void problemTwo(){
 
 void problemOne (){
     short sum = 0;
-    int n = 0;
+    short n = 0;
     do{
         cout << "Input n: ";
         cin >> n;
     }
-    while(inputCheck() == -3);
-    for (int i = 1; i <= n; i++) {
+    while(inputCheck(n) == -3);
+    for (short i = 1; i <= n; i++) {
         sum = sum + i;
     }
     cout << "\nThe sum of 1 to " << n << " is " << sum << endl;
 }
 
 int main() {
-    int testSelection;
+    int testSelection = 0;
     while (testSelection != -1) {
         cout << endl << "Which Problem would you like to run? (1-8): " << endl;
         cout << "To exit type '-1'" << endl;
         do{
             cout << ">> ";
             cin >> testSelection;
+            if(testSelection == -1){
+                break;
+            }
         }
-        while(inputCheck() == -3);
+        while(inputCheck(testSelection) == -3);
         if (testSelection == 1) {
             problemOne();
         }
@@ -99,19 +154,19 @@ int main() {
         if (testSelection == 3) {
             problemThree();
         }
-//        if (testSelection == 1) {
-//            problemFour();
-//        }
-//        if (testSelection == 1) {
-//            problemFive();
-//        }
-//        if (testSelection == 1) {
+        if (testSelection == 4) {
+            problemFour();
+        }
+        if (testSelection == 5) {
+            problemFive();
+        }
+//        if (testSelection == 6) {
 //            problemSix();
 //        }
-//        if (testSelection == 1) {
+//        if (testSelection == 7) {
 //            problemSeven();
 //        }
-//        if (testSelection == 1) {
+//        if (testSelection == 8) {
 //            problemEight();
 //        }
     }
