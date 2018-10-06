@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Charlie/Google Drive/COSC 2030/Lab3/Lab3-cdavis56.cpp
+iostream
+-
+cmath
+-
+cfloat
+-
+
