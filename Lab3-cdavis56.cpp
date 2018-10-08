@@ -18,14 +18,15 @@ int inputCheck(long n) {
         return -2;
     }
 }
-void problemSeven (){
-    for (float i = 3.4; i < 4.4; i += 0.2) {
+
+void problemEight (){
+    for (double i = 3.4; i < 4.4; i += 0.2) {
         cout << "i = " << i << endl;
     }
 }
 
-void problemEight (){
-    for (double i = 3.4; i < 4.4; i += 0.2) {
+void problemSeven (){
+    for (float i = 3.4; i < 4.4; i += 0.2) {
         cout << "i = " << i << endl;
     }
 }
@@ -39,10 +40,10 @@ void problemSix (){
     }
     while(inputCheck(n) == -3);
     for (float i = 1; i <= n; i++) {
-        sum = sum + (1 / i);
-        cout << sum << endl;
+        sum = sum + (1 / n);
     }
-    cout << sum << endl;
+    sum = sum - 1;
+    cout << "The summation of (1/n) -1 is " << sum << endl;
 }
 
 
