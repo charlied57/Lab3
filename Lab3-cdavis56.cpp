@@ -72,7 +72,7 @@ void problemFive (){
         product = product * temp;
     }
     cout << "There is an overflow when n is greater than " << prevTemp << " ." << endl;
-    cout << "The largest product of 1 to n you can have in a long is " << prevProd << " ." << endl;
+    cout << "The largest product of 1 to n you can have in a long is " << prevProd << "." << endl;
 }
 
 void problemFour (){
